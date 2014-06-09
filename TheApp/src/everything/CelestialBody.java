@@ -5,6 +5,7 @@ import tools.Waiter;
 
 import java.util.UUID;
 
+
 public abstract class CelestialBody extends Thread{
 
     public final String id = UUID.randomUUID().toString();

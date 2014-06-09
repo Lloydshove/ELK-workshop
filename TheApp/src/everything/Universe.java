@@ -22,8 +22,8 @@ public class Universe extends CelestialBody {
 
     @Override
     public void run() {
+        final LogBuilder logs = new LogBuilder(Universe, id, this.getClass());
         myState = Status.Here;
-        LogBuilder logs = new LogBuilder(Universe, id, this.getClass());
 
         logs.logEventFor(Started);
         int lifespan = lifeSpan();

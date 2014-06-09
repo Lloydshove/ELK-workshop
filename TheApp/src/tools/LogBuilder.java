@@ -23,6 +23,10 @@ public class LogBuilder {
     }
 
     public void logEventFor(Event spaceEvent) {
+        if(spaceEvent == Event.Started){
+            stopWatch.start();
+        }
+
         Map<String, Object> content =
                 ImmutableMap.<String, Object>of(
                         "Entity", type.name(),
