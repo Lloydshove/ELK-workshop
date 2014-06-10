@@ -4,12 +4,11 @@ Run through the following from start to finish and you'll have logged items from
 Static Html
 - - - - - -
 Open in intelliJ
-Run the run config
+Run the run configuration
 Static html is now hosted here : 
 
-http://localhost:8080/
-http://localhost:8080/head/elasticsearch-head-master/
-http://localhost:8080/kibana/kibana-3.1.0/
+Head - for viewing elastic search status - http://localhost:8080/head/elasticsearch-head-master/
+Kibana - for visualising data - http://localhost:8080/kibana/kibana-3.1.0/
 
 
 Elastic Search
@@ -29,7 +28,6 @@ run logstash pointing it at the config -vvv for very very verbose output
 bin/logstash -f ../config/logstash -vvv
 
 
-
 TheApp
 - - - - 
 Run it.  
@@ -42,6 +40,8 @@ check Kibana (see static HTML above)
 
 Kibana
 - - - - 
+*WARNING* save your kibana dashboard regularly.  Refreshing the browser loses it!  Where does the saved dashboard go (hint: check Head) *WARNING*
+
 Graph the data in Kibana however you want.  
 How many of each planet/galaxy/solarsystem/universe was there?
 What was the average duration each type survived for?
@@ -56,6 +56,6 @@ Play with elastic search.  Run multiple nodes, change the redundancy, shut one d
 What performance can you get?  
 Can you connect elastic search instances from multiple laptops in the workshop?
 Change the CosmologicalConstants in the app so logging is more rapid, how can you get better throughput into elastic?Does the logstash config make a difference?
-
+Play with Kibana, run multiple dashboards with different types of searches, play with the different charts.
 
 
