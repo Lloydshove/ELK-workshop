@@ -22,7 +22,7 @@ public class LogBuilder {
         this.logger = Logger.getLogger(clasz);
     }
 
-    public void logEventFor(Event spaceEvent) {
+    public void logEventFor(Event spaceEvent, Map<String, Object> metaData) {
         if(spaceEvent == Event.Started){
             stopWatch.start();
         }
@@ -32,7 +32,8 @@ public class LogBuilder {
                         "Entity", type.name(),
                         "Id", id,
                         "Event", spaceEvent.name(),
-                        "Duration", stopWatch.check());
+                        "Duration", stopWatch.check(),
+                        "MetaData", metaData);
 
         try {
             ObjectMapper mapper = new ObjectMapper();

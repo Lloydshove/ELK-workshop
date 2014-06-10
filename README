@@ -1,0 +1,53 @@
+Run through the following from start to finish and you'll have logged items from an app being picked up and thrown into elastic search so you can then graph them in Kibana
+
+
+Static Html
+- - - - - -
+Open in intelliJ
+Run the run config
+Static html is now hosted here : 
+
+http://localhost:8080/
+http://localhost:8080/head/elasticsearch-head-master/
+http://localhost:8080/kibana/kibana-3.1.0/
+
+
+Elastic Search
+- - - - - - - -
+unzip it
+run "bin/elasticsearch"
+check it on the 'head' website above 
+if you want to run more than one instance check config/elasticsearch.yml and 
+
+
+Logstash
+- - - - - - - -
+unzip it
+update config/logstash-universe.conf to your install path
+whats the config doing?
+run logstash pointing it at the config -vvv for very very verbose output
+bin/logstash -f ../config/logstash -vvv
+
+
+
+TheApp
+- - - - 
+Run it.  
+see the unformatted.log entries
+see the logstash verbose output of the stashing of logs
+see the elastic search console out put, its created an index!
+check the head plugin (see static HTML above).  How much data was inserted?
+check Kibana (see static HTML above)
+
+
+Kibana
+- - - - 
+
+
+
+Extra Credit
+- - - - - - -
+
+
+
+

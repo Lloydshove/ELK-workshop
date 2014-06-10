@@ -1,5 +1,5 @@
 package tools;
 
 public enum LogType {
-    Universe, LifeCycle
+    Universe, Galaxy, Planet, SolarSystem, LifeCycle
 }

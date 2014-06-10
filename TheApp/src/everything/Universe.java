@@ -4,7 +4,11 @@ import everything.galaxies.CosmologicalConstants;
 import everything.galaxies.GalaxyFactory;
 import org.apache.log4j.PropertyConfigurator;
 import tools.LogBuilder;
+import tools.LogType;
 import tools.Waiter;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static everything.Event.DestroyedByTheDaleks;
 import static everything.Event.Started;
@@ -16,24 +20,38 @@ public class Universe extends CelestialBody {
         PropertyConfigurator.configure("log4j.properties");
     }
 
+    Map<String, Object> emptyMap = new HashMap<>();
+
     public static void main(String[] args) {
         new Universe().start();
     }
 
     @Override
+    protected LogType myType() {
+        return LogType.Universe;
+    }
+
+    @Override
     public void run() {
-        final LogBuilder logs = new LogBuilder(Universe, id, this.getClass());
-        myState = Status.Here;
+        final LogBuilder logs = new LogBuilder(myType(), id, this.getClass());
 
-        logs.logEventFor(Started);
-        int lifespan = lifeSpan();
-        while(lifespan < watch.check()){
+
+        while(true){
+            watch.start();
+
+            factory = newFactory();
+            myState = Status.Here;
+            logs.logEventFor(Started, emptyMap);
+            long lifespan = lifeSpan();
+
             factory.formSome();
-            new Waiter().waitAWhile(this);
-        }
+            while(lifespan < watch.check()){
+                new Waiter().waitAWhile(this);
+            }
 
-        logs.logEventFor(DestroyedByTheDaleks);
-        factory.itsAllOver(DestroyedByTheDaleks);
+            logs.logEventFor(DestroyedByTheDaleks, emptyMap);
+            factory.itsAllOver(DestroyedByTheDaleks);
+        }
     }
 
 
@@ -46,4 +64,6 @@ public class Universe extends CelestialBody {
     public int lifeSpan() {
         return CosmologicalConstants.randomUniverseLifespan();
     }
+
+
 }

@@ -1,5 +1,8 @@
 package everything;
 
+import everything.galaxies.CosmologicalConstants;
+import tools.Waiter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +12,7 @@ public abstract class CelestialFactory {
 
     public void formSome(){
         for(int i = 0; i < numberOfThings(); i ++){
+            new Waiter().waitAWhile(Thread.currentThread());
             CelestialBody thing = createOne();
             thing.start();
         }
