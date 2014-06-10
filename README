@@ -42,12 +42,20 @@ check Kibana (see static HTML above)
 
 Kibana
 - - - - 
+Graph the data in Kibana however you want.  
+How many of each planet/galaxy/solarsystem/universe was there?
+What was the average duration each type survived for?
+How many things were destroyed by the daleks?
 
+What other log data do you want to add to get better stats?
 
 
 Extra Credit
 - - - - - - -
-
+Play with elastic search.  Run multiple nodes, change the redundancy, shut one down, see it rebalance in Head.
+What performance can you get?  
+Can you connect elastic search instances from multiple laptops in the workshop?
+Change the CosmologicalConstants in the app so logging is more rapid, how can you get better throughput into elastic?Does the logstash config make a difference?
 
 
 
