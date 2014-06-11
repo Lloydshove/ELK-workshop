@@ -18,6 +18,10 @@ run "bin/elasticsearch"
 check it on the 'head' website above 
 if you want to run more than one instance check config/elasticsearch.yml and 
 
+Documentation:
+http://www.elasticsearch.org/guide/
+http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-configuration.html  < configuration settings
+
 
 Logstash
 - - - - - - - -
@@ -27,6 +31,9 @@ whats the config doing?
 run logstash pointing it at the config -vvv for very very verbose output
 bin/logstash -f ../config/logstash -vvv
 
+Documentation:
+http://logstash.net/docs/1.4.1/
+http://logstash.net/docs/1.4.1/tutorials/getting-started-with-logstash
 
 TheApp
 - - - - 
@@ -49,6 +56,8 @@ How many things were destroyed by the daleks?
 
 What other log data do you want to add to get better stats?
 
+Documentation:
+http://www.elasticsearch.org/guide/en/kibana/current/index.html
 
 Extra Credit
 - - - - - - -
